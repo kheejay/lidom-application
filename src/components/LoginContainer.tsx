@@ -3,6 +3,7 @@ import styles from "@/src/app/loginpage/page.module.css";
 import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { login, signup } from "./actions";
 
 const LoginContainer = () => {
   const [isActive, setIsActive] = useState(false);
@@ -49,10 +50,14 @@ const LoginContainer = () => {
             <span className={styles.black2}>
               Use your email and password to sign in
             </span>
-            <input type="text" placeholder="email" name="email" />
-            <input type="password" placeholder="password" name="password" />
+            <input type="text" placeholder="email" id="email" />
+            <input type="password" placeholder="password" id="password" />
             <Link href="/forgot-password">Forgot Your Password?</Link>
-            <button className={styles.outside} onClick={handleSignInClick}>
+            <button
+              className={styles.outside}
+              onClick={handleSignInClick}
+              formAction={login}
+            >
               Sign In
             </button>
           </form>
@@ -79,6 +84,7 @@ const LoginContainer = () => {
                 className={`${styles.hidden} ${isActive ? "" : styles.visible}`}
                 id="register"
                 onClick={handleRegisterClick}
+                formAction={signup}
               >
                 Create Account
               </button>
