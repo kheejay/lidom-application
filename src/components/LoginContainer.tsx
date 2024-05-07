@@ -16,8 +16,10 @@ const LoginContainer = () => {
     router.push("../app/lobby/page.tsx");
   };
 
-  const router = useRouter();
-  router.push("../app/lobby/page.tsx");
+  const handleSignInClick = () => {
+    const router = useRouter();
+    router.push("../app/lobby/page.tsx");
+  };
 
   return (
     <div className={styles.body}>
@@ -45,8 +47,7 @@ const LoginContainer = () => {
             <input type="password" placeholder="password" name="password" />
             <Link href="/forgot-password">Forgot Your Password?</Link>
             <button className={styles.outside} onClick={handleSignInClick}>
-              {" "}
-              Sign In{" "}
+              Sign In
             </button>
           </form>
         </div>
