@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "@/src/app/loginpage/page.module.css";
 import React from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const LoginContainer = () => {
   const [isActive, setIsActive] = useState(false);
@@ -13,6 +14,10 @@ const LoginContainer = () => {
   const handleLoginClick = () => {
     setIsActive(false);
   };
+
+  const router = useRouter();
+  router.push('../app/lobby/page.tsx');
+};
 
   return (
     <div className={styles.body}>
@@ -39,7 +44,7 @@ const LoginContainer = () => {
             <input type="text" placeholder="email" name="email" />
             <input type="password" placeholder="password" name="password" />
             <Link href="/forgot-password">Forgot Your Password?</Link>
-            <button className={styles.outside}>Sign In</button>
+            <button className={styles.outside} onClick={handleSignInClick}> Sign In </button>
           </form>
         </div>
         <div className={styles.toggleContainer}>
