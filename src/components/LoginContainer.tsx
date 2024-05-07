@@ -14,6 +14,11 @@ const LoginContainer = () => {
     setIsActive(false);
   };
 
+  const handleSignInClick = () => {
+    const router = useRouter();
+    router.push("../app/lobby/page.tsx");
+  };
+
   return (
     <div className={styles.body}>
       <div
@@ -39,7 +44,9 @@ const LoginContainer = () => {
             <input type="text" placeholder="email" name="email" />
             <input type="password" placeholder="password" name="password" />
             <Link href="/forgot-password">Forgot Your Password?</Link>
-            <button className={styles.outside}>Sign In</button>
+            <button className={styles.outside} onClick={handleSignInClick}>
+              Sign In
+            </button>
           </form>
         </div>
         <div className={styles.toggleContainer}>
