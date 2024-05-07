@@ -16,7 +16,7 @@ const LoginContainer = () => {
 
   const handleSignInClick = () => {
     const router = useRouter();
-    router.push("../app/lobby/page.tsx");
+    router.push("../app/lobby");
   };
 
   return (
