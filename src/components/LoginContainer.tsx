@@ -3,7 +3,7 @@ import styles from "@/src/app/loginpage/page.module.css";
 import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { login, signup } from "./actions";
+import { login, signup } from "../app/loginpage/actions";
 
 const LoginContainer = () => {
   const [isActive, setIsActive] = useState(false);
@@ -14,16 +14,6 @@ const LoginContainer = () => {
 
   const handleLoginClick = () => {
     setIsActive(false);
-  };
-
-  const handleSignInClick = () => {
-    const router = useRouter();
-    router.push("src/app/lobby");
-  };
-
-  const handleSignUpClick = () => {
-    const router = useRouter();
-    router.push("src/app/lobby");
   };
 
   return (
@@ -39,9 +29,7 @@ const LoginContainer = () => {
             <input type="text" placeholder="Name" name="name" />
             <input type="text" placeholder="email" name="email" />
             <input type="password" placeholder="password" name="password" />
-            <button className={styles.outside} onClick={handleSignInClick}>
-              Register Account
-            </button>
+            <button className={styles.outside}>Register Account</button>
           </form>
         </div>
         <div className={`${styles.formContainer} ${styles.signIn}`}>
@@ -53,13 +41,9 @@ const LoginContainer = () => {
             <input type="text" placeholder="email" id="email" />
             <input type="password" placeholder="password" id="password" />
             <Link href="/forgot-password">Forgot Your Password?</Link>
-            <button
-              className={styles.outside}
-              onClick={handleSignInClick}
-              formAction={login}
-            >
-              Sign In
-            </button>
+            <Link href="/lobby">
+              <button className={styles.outside}>Sign In</button>{" "}
+            </Link>
           </form>
         </div>
         <div className={styles.toggleContainer}>
