@@ -20,6 +20,11 @@ const LoginContainer = () => {
     router.push("./src/app/lobby/page.tsx");
   };
 
+  const handleSignUpClick = () => {
+    const router = useRouter();
+    router.push("./src/app/lobby/page.tsx");
+  };
+
   return (
     <div className={styles.body}>
       <div
@@ -33,7 +38,9 @@ const LoginContainer = () => {
             <input type="text" placeholder="Name" name="name" />
             <input type="text" placeholder="email" name="email" />
             <input type="password" placeholder="password" name="password" />
-            <button className={styles.outside}>Register Account</button>
+            <button className={styles.outside} onClick={handleSignInClick}>
+              Register Account
+            </button>
           </form>
         </div>
         <div className={`${styles.formContainer} ${styles.signIn}`}>
