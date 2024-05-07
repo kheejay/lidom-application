@@ -11,14 +11,13 @@ const LoginContainer = () => {
     setIsActive(true);
   };
 
-  const handleSignInClick = () => {
-    const router = useRouter();
-    router.push("../app/lobby/page.tsx");
+  const handleLoginClick = () => {
+    setIsActive(false);
   };
 
   const handleSignInClick = () => {
     const router = useRouter();
-    router.push("../app/lobby/page.tsx");
+    router.push("./src/app/lobby/page.tsx");
   };
 
   return (
