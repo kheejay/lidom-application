@@ -17,12 +17,12 @@ const LoginContainer = () => {
 
   const handleSignInClick = () => {
     const router = useRouter();
-    router.push("/app/lobby/page");
+    router.push("/app/lobby/");
   };
 
   const handleSignUpClick = () => {
     const router = useRouter();
-    router.push("/app/lobby/page");
+    router.push("/app/lobby/");
   };
 
   return (
