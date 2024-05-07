@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "@/src/app/loginpage/page.module.css";
+import styles from "@/src/app/loginpage/page";
 import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";

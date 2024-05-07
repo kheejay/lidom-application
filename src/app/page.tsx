@@ -1,4 +1,4 @@
-import { createClient } from "@/src/app/supabase/server";;
+import { createClient } from "@/src/utils/supabase/server";
 import styles from "@/src/app/page.module.css";
 import LoginPage from "./loginpage/page";
 
