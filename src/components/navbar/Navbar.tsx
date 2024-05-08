@@ -4,7 +4,7 @@ import React from "react";
 import styles from "./navbar.module.css";
 import Image from "next/image";
 import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
-import { useState } from "@/context/ThemeContext";
+import { useTheme } from "@/context/ThemeContext";
 
 const Links = [
   {
@@ -23,7 +23,7 @@ const Links = [
     url: "#",
   },
 ];
-const { mode } = useState();
+const { mode } = useTheme();
 
 const Navbar = () => {
   return (
