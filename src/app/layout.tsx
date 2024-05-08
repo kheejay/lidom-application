@@ -26,7 +26,7 @@ export default function RootLayout({
     <html lang="en" className={GeistSans.className}>
       <body className={inter.className}>
         <main className="container">
-        <Navbar />
+          <Navbar />
           {children}
           <Footer />
         </main>

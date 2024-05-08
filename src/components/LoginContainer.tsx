@@ -2,7 +2,6 @@ import { useState } from "react";
 import styles from "@/src/app/loginpage/page.module.css";
 import React from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { login, signup } from "../app/loginpage/actions";
 
 const LoginContainer = () => {
