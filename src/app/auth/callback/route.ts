@@ -2,6 +2,8 @@ import { type EmailOtpType } from '@supabase/supabase-js'
 import { type NextRequest, NextResponse } from 'next/server'
 
 import { createClient } from '@/utils/supabase/server.ts'
+import { prismadb } from '@/src/lib/prismadb'
+import {hash} from 'bcrypt';
 
 // Creating a handler to a GET request to route /auth/confirm
 export async function GET(request: NextRequest) {
@@ -32,4 +34,39 @@ export async function GET(request: NextRequest) {
   // return the user to an error page with some instructions
   redirectTo.pathname = '/error'
   return NextResponse.redirect(redirectTo)
+}
+
+export async function POST (req:Request) {
+  try{
+    const body = await req.json()
+    const {email, name, password} = body;
+
+    // check if the email already exists
+    const existingEmail = await prismadb.user.findUnique({
+    where: {email: email}
+  });
+  if(existingEmail){
+    return NextResponse.json({user:null, message: "Existing Email. Try a different one."}, {status: 409})
+  }
+
+  // check if the name already exists
+  const existingName = await prismadb.user.findUnique({
+    where: {name: name}
+  });
+  if(existingName){
+    return NextResponse.json({user:null, message: "Existing Name. Try a different one."}, {status: 409})
+  }
+  // checking if password exists and for security encryption
+  const hashedPassword = await hash(password, 8);
+  const newUser = await prismadb.user.create ({
+    data: {
+      email,
+      name,
+      password:hashedPassword
+    }
+  })
+
+
+    return NextResponse.json({user: newUser, message: "Account Created Successfully."}, {status:201});
+  } catch(error)
 }
