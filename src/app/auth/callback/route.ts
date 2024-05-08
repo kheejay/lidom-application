@@ -4,10 +4,13 @@ import { type NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/src/utils/supabase/server'
 import { prismadb } from '@/src/lib/prismadb'
 import {hash} from 'bcrypt';
+import * as z from 'zod'
 
 // Creating a handler to a GET request to route /auth/confirm
 export async function GET(request: NextRequest) {
-  const { searchParams } = new URL(request.url)
+  const { searchParams } = new
+  
+  URL(request.url)
   const token_hash = searchParams.get('token_hash')
   const type = searchParams.get('type') as EmailOtpType | null
   const next = '/account'
@@ -36,10 +39,27 @@ export async function GET(request: NextRequest) {
   return NextResponse.redirect(redirectTo)
 }
 
+const userSchema = z
+  .object({
+    name: z.string ().min (1,'Name is required').max(100),
+    email: z.string ().min (1,'Email is required').email('Invalid email'),
+    password:z
+    .string()
+    .min(1,'Password is required')
+    .min(8, 'Password must have more than 8 characters')
+
+
+  })
+
+
+
+
+
+
 export async function POST (req:Request) {
   try{
     const body = await req.json()
-    const {email, name, password} = body;
+    const {email, name, password} = userSchema.parse(body);
 
     // check if the email already exists
     const existingEmail = await prismadb.user.findUnique({

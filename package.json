@@ -18,7 +18,8 @@
     "react-dom": "18.2.0",
     "tailwindcss": "3.4.1",
     "typed.js": "^2.1.0",
-    "typescript": "5.3.3"
+    "typescript": "5.3.3",
+    "zod": "^3.23.7"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
@@ -27,5 +28,12 @@
     "@types/react-dom": "18.2.18",
     "encoding": "^0.1.13",
     "prisma": "^5.13.0"
-  }
+  },
+  "name": "lidom-application",
+  "version": "1.0.0",
+  "description": "<a href=\"https://demo-nextjs-with-supabase.vercel.app/\">\r   <img alt=\"Next.js and Supabase Starter Kit - the fastest way to build apps with Next.js and Supabase\" src=\"https://demo-nextjs-with-supabase.vercel.app/opengraph-image.png\">\r   <h1 align=\"center\">Next.js and Supabase Starter Kit</h1>\r </a>",
+  "main": "next.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
