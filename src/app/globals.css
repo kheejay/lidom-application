@@ -32,6 +32,11 @@ a {
   background-color: #121212;
   color: white;
 }
+
+.light h1{
+  color: #272727;
+}
+
 .theme{
   transition: 1s all ease;
 }

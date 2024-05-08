@@ -1,7 +1,7 @@
 .container{
 width: 2.625rem;
 height: 1.5rem;
-border: 0.088rem solid #53c28b70;
+border: 1px solid #53c28b70;
 border-radius: 1.875rem;
 display: flex;
 justify-content: space-between;
