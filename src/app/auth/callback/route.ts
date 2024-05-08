@@ -64,11 +64,12 @@ export async function POST (req:Request) {
       name,
       password:hashedPassword
     }
-  })
+  });
+  const {password: newUserPassword, ...rest} = newUser;
 
 
     return NextResponse.json({user: newUser, message: "Account Created Successfully."}, {status:201});
   } catch(error) {
-    
+
   }
 }
