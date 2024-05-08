@@ -28,9 +28,12 @@ a {
   color: rgb(61, 59, 59);
 }
 
-.{
+.dark{
   background-color: #121212;
   color: white;
+}
+.theme{
+  transition: 1s all ease;
 }
 
 .container {
