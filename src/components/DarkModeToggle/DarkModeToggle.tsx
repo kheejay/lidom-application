@@ -16,5 +16,4 @@ const DarkModeToggle = () => {
     </div>
   );
 };
-
 export default DarkModeToggle;
