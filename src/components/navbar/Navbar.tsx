@@ -1,10 +1,8 @@
-"use client";
 import Link from "next/link";
 import React from "react";
 import styles from "./navbar.module.css";
 import Image from "next/image";
 import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
-import { useTheme } from "@/context/ThemeContext";
 
 const Links = [
   {
@@ -23,18 +21,12 @@ const Links = [
     url: "#",
   },
 ];
-const { mode } = useTheme();
 
 const Navbar = () => {
   return (
     <div className={styles.container}>
       <Link href="/" className={styles.logo}>
-        <Image
-          src={mode ? "/lidom.png" : "/lidomW.png"}
-          alt="logo"
-          width={60}
-          height={30}
-        />
+        <Image src="/lidomW.png" alt="logo" width={60} height={30} />
       </Link>
       <div className={styles.Links}>
         <DarkModeToggle />

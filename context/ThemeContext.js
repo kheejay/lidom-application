@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useContext, createContext} from "react"
+import { useState, createContext} from "react"
 export const ThemeContext = createContext()
 
 export const ThemeProvider = ({children}) =>{
@@ -16,6 +16,3 @@ export const ThemeProvider = ({children}) =>{
         </ThemeContext.Provider>
     )
 };
-export const useTheme = () => {
-    return useContext(ThemeContext);
-  };
