@@ -16,3 +16,10 @@ export const ThemeProvider = ({children}) =>{
         </ThemeContext.Provider>
     )
 };
+export const useState = () => {
+    const context = context(ThemeContext);
+    if (!context) {
+      throw new Error('useState must be used within a ThemeProvider');
+    }
+    return context;
+  };
