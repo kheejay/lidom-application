@@ -3,4 +3,23 @@ width: 2.625rem;
 height: 1.5rem;
 border: 0.088rem solid #53c28b70;
 border-radius: 1.875rem;
+display: flex;
+justify-content: space-between;
+padding: 2px;
+align-items: center;
+position: relative;
+cursor: pointer;
+}
+
+
+.icon{
+    font-size: 12px;
+}
+
+.ball{
+    width:0.938rem;
+    height: 0.938rem;
+    background-color: #53c28b70;
+    border-radius: 50%;
+    position: absolute;
 }

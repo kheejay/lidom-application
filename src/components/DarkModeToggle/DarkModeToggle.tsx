@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./DarkModeToggle.module.css";
 
 const DarkModeToggle = () => {
+  const mode = "dark";
   return (
     <div className={styles.container}>
       <div className={styles.icon}>🌒</div>
